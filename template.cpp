@@ -3,8 +3,8 @@ using namespace std;
 
 void dbg_out() { cerr << endl; }
 template <typename H, typename... T> 
-void dbg_out(H h, T... t) { cout << ' ' << h; dbg_out(t...); }
-#define dbg(...) cout << #__VA_ARGS__ << ':'; dbg_out(__VA_ARGS__);
+void dbg_out(H h, T... t) { cerr << ' ' << h; dbg_out(t...); }
+#define dbg(...) cerr << #__VA_ARGS__ << ':'; dbg_out(__VA_ARGS__);
 #define ln cerr << "line:" << __LINE__ << " fine, thanks" << endl
 
 #define pb push_back
