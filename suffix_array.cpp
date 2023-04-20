@@ -93,8 +93,8 @@ public:
   }
 
   void debug(string const& s){
-    for(int i = 0; i < s.size(); i++){
-      if(i != s.size()-1) cout << lcp[i] << " ";
+    for(int i = 0; i < p.size(); i++){
+      if(i != p.size()-1) cout << lcp[i] << " ";
       else cout << "- ";
       for(int j = p[i]; j < s.size(); j++) cout << s[j];
       cout << endl;
