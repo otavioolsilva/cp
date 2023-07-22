@@ -44,7 +44,7 @@ ll mdc(ll a, ll b){
 // N ESCOLHE K mod MOD
 ll fat[MAXN], fat_inv[MAXN];
 
-ll inv(ll i){
+ll inv(ll i){ // pra MOD = 1e9+7, 50 iterações no máximo
   return (i <= 1 ? i : MOD - (long long)(MOD/i) * inv(MOD % i) % MOD);
 }
 
