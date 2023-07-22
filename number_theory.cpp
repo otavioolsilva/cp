@@ -40,3 +40,26 @@ ll tot(ll x){
 ll mdc(ll a, ll b){
 	return (b == 0) ? a : mdc(b, a%b);
 }
+
+// N ESCOLHE K mod MOD
+ll fat[MAXN], fat_inv[MAXN];
+
+ll inv(ll i){
+  return (i <= 1 ? i : MOD - (long long)(MOD/i) * inv(MOD % i) % MOD);
+}
+
+void precalc(){
+  fat[0] = 1;
+  fat_inv[0] = 1;
+  
+  for(int i = 1; i < MAXN; i++){
+    fat[i] = (fat[i-1] * i) % MOD;
+    fat_inv[i] = inv(fat[i]) % MOD;
+  }
+}
+
+ll comb(ll n, ll k){
+	if(k > n || k < 0) return 0;
+	return (((fat[n] * fat_inv[n-k]) % MOD) * fat_inv[k]) % MOD;
+}
+
